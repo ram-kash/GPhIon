@@ -1,0 +1,29 @@
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- MDAnalysis team for the excellent molecular analysis framework
+- Scientific Python community for the foundational packages
+- Original TAOG method developers
+- Contributors and users of the package
+
+## Support
+
+- **Documentation**: [https://gphion.readthedocs.io](https://gphion.readthedocs.io)
+- **Issues**: [GitHub Issues](https://github.com/yourusername/gphion/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/gphion/discussions)
+- **Email**: your.email@institution.edu
+
+## Changelog
+
+### Version 1.0.0 (2025-07-31)
+- Initial release
+- Complete TAOG analysis implementation
+- Van Hove correlation function analysis
+- Site connectivity visualization
+- Collective jump analysis
+- Comprehensive visualization suite
+

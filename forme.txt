@@ -1,0 +1,31 @@
+from gphion import ...
+Create the package files:
+
+bash
+# Create the files above in your project root
+touch README.md
+touch setup.py
+touch requirements.txt
+Install in development mode:
+
+bash
+pip install -e .
+Install with all optional dependencies:
+
+bash
+pip install -e ".[full]"
+For development:
+
+bash
+pip install -e ".[dev]"
+Usage After Installation
+After installation, you can use the package from anywhere:
+
+python
+import gphion
+from gphion import AmorphousSiteFinder, VanHovePlotter, ConnectivityPlotter
+
+# Your analysis code here
+This creates a professional, installable Python package named GPHIon with comprehensive documentation, proper dependency management, and all the features from your TAOG analysis framework!
+
+
