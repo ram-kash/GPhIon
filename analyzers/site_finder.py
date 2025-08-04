@@ -105,4 +105,57 @@ class AmorphousSiteFinder:
         ])
 
         return cart_coords
+    
+    # ------------------------------------------------------------------
+    #  Robust, grid-aware site-radius estimator
+    # ------------------------------------------------------------------
+    def get_site_radii(self, labeled_peaks, num_features, edges,
+                    discovered_sites_cart, pct=95):
+        """
+        Estimate a radius for each site from the 3-D occupancy grid.
+
+        Parameters
+        ----------
+        labeled_peaks : ndarray[int]
+            3-D array returned by nd_label: each voxel has 0 or a peak label.
+        num_features : int
+            Number of distinct peak regions (labels).
+        edges : list[np.ndarray]
+            Bin edges from np.histogramdd (x, y, z).
+        discovered_sites_cart : (N,3) ndarray
+            Cartesian coordinates of site centres (same order as labels).
+        pct : int
+            Percentile of voxel distances to keep (default = 95).
+        Returns
+        -------
+        radii : (N,) ndarray
+            One radius per site in Å.
+        """
+        # --- grid geometry -------------------------------------------
+        bin_centres = [(e[:-1] + e[1:]) / 2.0 for e in edges]
+        voxel_size  = np.array([e[1] - e[0] for e in edges])
+        voxel_diag  = np.linalg.norm(voxel_size)          # full body diagonal
+
+        radii = []
+        for lbl in range(1, num_features + 1):
+            # voxels belonging to this peak
+            vox = np.argwhere(labeled_peaks == lbl)
+            if vox.size == 0:        # paranoia
+                radii.append(2.0)
+                continue
+
+            # voxel-centre → Cartesian
+            coords = np.array([[bin_centres[d][idx] for d, idx in enumerate(v)]
+                            for v in vox])
+
+            centre = discovered_sites_cart[lbl - 1]
+            dists  = np.linalg.norm(coords - centre, axis=1)
+
+            # percentile + half-diagonal compensates centre-to-edge offset
+            r = np.percentile(dists, pct) + 0.5 * voxel_diag
+            radii.append(r)
+
+        return np.asarray(radii)
+
+
 
