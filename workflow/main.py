@@ -47,7 +47,7 @@ def main_analysis_workflow():
     from ..analyzers.tracer_analyzer import TracerPropertyAnalyzer
     from ..analyzers.vibration_analyzer import VibrationAnalyzer
     from ..analyzers.site_finder import AmorphousSiteFinder
-    from ..analyzers.jump_analyzer import SiteAnalyzerMDA
+    from ..analyzers.jump_analyzer import JumpAnalyzer
     from ..analyzers.diffusivity_analyzer import JumpDiffusivityAnalyzer
     from ..analyzers.collective_jump_analyzer import CollectiveJumpAnalyzer
 
@@ -114,7 +114,7 @@ def main_analysis_workflow():
             raise RuntimeError("No sites were discovered.")
 
         # Analyze Jumps Between Discovered Sites
-        jump_analysis = SiteAnalyzerMDA(
+        jump_analysis = JumpAnalyzer(
             diffusing_atom_group=sim_data_obj.universe.select_atoms(f"element {diffusing_element}"),
             site_coordinates_cart=discovered_sites_cartesian
         )

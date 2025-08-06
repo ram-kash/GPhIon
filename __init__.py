@@ -18,7 +18,7 @@ __license__ = "MIT"
 from .core.sim_data import SimData
 from .core.coordinate_processor import CoordinateProcessor
 from .analyzers.site_finder import AmorphousSiteFinder
-from .analyzers.jump_analyzer import SiteAnalyzerMDA
+from .analyzers.jump_analyzer import JumpAnalyzer
 from .analyzers.diffusivity_analyzer import JumpDiffusivityAnalyzer
 from .analyzers.collective_jump_analyzer import CollectiveJumpAnalyzer
 from .analyzers.vibration_analyzer import VibrationAnalyzer
@@ -41,7 +41,7 @@ __all__ = [
     
     # Analysis classes
     'AmorphousSiteFinder',
-    'SiteAnalyzerMDA',
+    'JumpAnalyzer',
     'JumpDiffusivityAnalyzer',
     'CollectiveJumpAnalyzer',
     'VibrationAnalyzer',

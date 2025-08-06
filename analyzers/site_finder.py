@@ -63,7 +63,7 @@ class AmorphousSiteFinder:
         
         return density, edges
 
-    def _find_grid_peaks(self, density_grid):
+    def _find_grid_peaks(self, density_grid, return_labels=False):
         """Identify local maxima in the 3D density grid."""
         if self.min_peak_height is None:
             threshold = 5 * density_grid[density_grid > 0].mean()
@@ -84,11 +84,15 @@ class AmorphousSiteFinder:
 
         # Find the center of each labeled region
         peak_indices = np.array([
-            np.mean(np.argwhere(labeled_peaks == i), axis=0) 
+            np.mean(np.argwhere(labeled_peaks == i), axis=0)
             for i in range(1, num_features + 1)
         ])
 
-        return peak_indices
+        if return_labels:
+            return labeled_peaks, num_features, peak_indices
+        else:
+            return peak_indices
+
 
     def _convert_indices_to_coords(self, indices, edges):
         """Convert grid indices to Cartesian coordinates using the bin edges."""
@@ -141,7 +145,8 @@ class AmorphousSiteFinder:
             # voxels belonging to this peak
             vox = np.argwhere(labeled_peaks == lbl)
             if vox.size == 0:        # paranoia
-                radii.append(2.0)
+                print(f"WARNING: label {lbl} has no voxels – fallback radius used")
+                radii.append(0.01)
                 continue
 
             # voxel-centre → Cartesian

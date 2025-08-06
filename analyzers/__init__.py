@@ -1,7 +1,7 @@
 """Analysis modules for TAOG package."""
 
 from .site_finder import AmorphousSiteFinder
-from .jump_analyzer import SiteAnalyzerMDA
+from .jump_analyzer import JumpAnalyzer
 from .diffusivity_analyzer import JumpDiffusivityAnalyzer
 from .collective_jump_analyzer import CollectiveJumpAnalyzer
 from .vibration_analyzer import VibrationAnalyzer
@@ -11,7 +11,7 @@ from .vanhove_analyzer import VanHoveAnalyzer
 
 __all__ = [
     'AmorphousSiteFinder',
-    'SiteAnalyzerMDA', 
+    'JumpAnalyzer', 
     'JumpDiffusivityAnalyzer',
     'CollectiveJumpAnalyzer',
     'VibrationAnalyzer',
