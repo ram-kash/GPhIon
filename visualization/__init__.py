@@ -4,6 +4,7 @@ from .plotting import plot_taog_density
 from .vanhove_plotter import VanHovePlotter
 from .connectivity_plotter import ConnectivityPlotter
 from .mig_path_plotter import MigrationPathwayPlotter
+from .Mig_Path_Visualizer import MigrationPathVisualizer
 
 __all__ = [
     'plot_taog_density',
@@ -12,5 +13,6 @@ __all__ = [
     'CollectivePlotter'
     'ConnectivityPlotter'
     'MigrationPathwayPlotter'
+    'MigrationPathVisualizer'
 ]
 

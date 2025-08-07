@@ -32,6 +32,7 @@ from .visualization.displacement_plotter import DisplacementPlotter
 from .visualization.collective_plotter import CollectivePlotter
 from .visualization.connectivity_plotter import ConnectivityPlotter
 from .visualization.mig_path_plotter import MigrationPathwayPlotter
+from .visualization.Mig_Path_Visualizer import MigrationPathVisualizer
 from .workflow.main import load_simulation_data
 
 __all__ = [
@@ -58,6 +59,7 @@ __all__ = [
     'CollectivePlotter',
     'ConnectivityPlotter',
     'MigrationPathwayPlotter',
+    'MigrationPathVisualizer',
     
     # Utility functions
     'load_simulation_data',
