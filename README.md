@@ -43,12 +43,8 @@ GPHIon is a comprehensive Python package for analyzing ion diffusion in glassy p
 cd /home/ram/Music/GPhIon
 pip install -e .
 
-text
-
 ### Install Dependencies
 pip install -r requirements.txt
-
-text
 
 ## Quick Start
 
@@ -217,8 +213,6 @@ If you use GPHIon in your research, please cite:
 }
 ```
 
-text
-
 ## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
@@ -228,12 +222,8 @@ git clone /home/ram/Music/GPhIon
 cd GPhIon
 pip install -e ".[dev]"
 
-text
-
 ### Running Tests
 pytest tests/
-
-text
 
 ## License
 
