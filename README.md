@@ -117,29 +117,34 @@ yscale='log'
 
 ## Package Structure
 
-gphion
-├── gphion
+GPhIon/
+├── gphion/
 │   ├── __init__.py
-│   ├── core
+│
+│   ├── core/
 │   │   ├── __init__.py
-│   │   ├── sim_data.py           # Main data structure
-│   │   ├── coordinate_processor.py # Coordinate processing
-│   │   └── utils.py              # Utility functions
+│   │   ├── sim_data.py                  # Main data structure
+│   │   ├── coordinate_processor.py      # Coordinate processing
+│   │   └── utils.py                     # Utility functions
+│
 │   ├── analyzers/
 │   │   ├── __init__.py
-│   │   ├── site_finder.py        # TAOG site discovery
-│   │   ├── jump_analyzer.py      # Jump detection
-│   │   ├── diffusivity_analyzer.py # Diffusivity calculations
+│   │   ├── site_finder.py              # TAOG site discovery
+│   │   ├── jump_analyzer.py            # Jump detection
+│   │   ├── diffusivity_analyzer.py     # Diffusivity calculations
 │   │   └── ...
+│
 │   ├── visualization/
 │   │   ├── __init__.py
 │   │   └── ...
+│
 │   └── workflow/
 │       ├── __init__.py
-│       └── main.py               # Main workflow functions
-├── tests/                        # Test suite
-├── setup.py                      # Installation script
-└── README.md                     # Documentation
+│       └── main.py                     # Main workflow functions
+│
+├── tests/                              # Test suite
+├── setup.py                            # Installation script
+└── README.md                           # Documentation
 
 ## Documentation
 
