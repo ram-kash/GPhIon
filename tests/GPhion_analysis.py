@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Add package path
-sys.path.append(os.path.abspath(os.path.join(script_dir, '../')))
+#sys.path.append(os.path.abspath(os.path.join(script_dir, '../')))
 
 from gphion import (
     load_simulation_data,
