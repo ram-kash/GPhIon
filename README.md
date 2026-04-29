@@ -117,10 +117,10 @@ yscale='log'
 
 ## Package Structure
 
-gphion/
-├── gphion/
+gphion
+├── gphion
 │   ├── __init__.py
-│   ├── core/
+│   ├── core
 │   │   ├── __init__.py
 │   │   ├── sim_data.py           # Main data structure
 │   │   ├── coordinate_processor.py # Coordinate processing
