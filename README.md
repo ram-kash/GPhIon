@@ -115,8 +115,6 @@ xlim=(0, 10),
 yscale='log'
 )
 
-text
-
 ## Package Structure
 
 gphion/
@@ -142,8 +140,6 @@ gphion/
 ├── tests/                        # Test suite
 ├── setup.py                      # Installation script
 └── README.md                     # Documentation
-
-text
 
 ## Documentation
 
