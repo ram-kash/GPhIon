@@ -74,4 +74,5 @@ Thumbs.db
 *.dat
 analysis_output/
 output_plots/
+plot_data/
 

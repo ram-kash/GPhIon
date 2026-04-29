@@ -36,8 +36,8 @@ setup(
     # Basic package information
     name="gphion",
     version=get_version(),
-    author="Your Name",
-    author_email="your.email@institution.edu",
+    author="Dr. Ram Sewak",
+    author_email="ram.sewak@iitgn.ac.in",
     description="Glassy Phase Ionic Conductor Analysis Package",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",

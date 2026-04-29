@@ -1,0 +1,7 @@
+include LICENSE
+include README.md
+include requirements.txt
+recursive-include gphion *.py
+recursive-include tests *.py *.ipynb *.lammpstrj *.md
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

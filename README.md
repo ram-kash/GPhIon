@@ -16,11 +16,11 @@ GPHIon is a comprehensive Python package for analyzing ion diffusion in glassy p
 - **🌊 Van Hove Functions**: Self and distinct Van Hove correlation function analysis
 - **📈 Vibrational Analysis**: Ion attempt frequency and vibration amplitude calculations
 - **📐 Radial Distribution Functions**: Site-specific and total RDF analysis
-- **🔗 Connectivity Analysis**: Site connectivity networks and diffusion pathway visualization
+- **📐 Radial Distribution Functions**: Site-specific and total RDF analysis
 
 ### Visualization Capabilities
 - **3D Density Plots**: TAOG density visualization with isosurfaces
-- **Site Connectivity Networks**: 3D and 2D connectivity plots showing hopping pathways
+- **Jump Statistics**: Histograms and correlation matrices for collective behavior
 - **Jump Statistics**: Histograms and correlation matrices for collective behavior
 - **Displacement Analysis**: Individual and averaged displacement trajectories
 - **Van Hove Plots**: Customizable correlation function visualization
@@ -40,8 +40,7 @@ GPHIon is a comprehensive Python package for analyzing ion diffusion in glassy p
 - seaborn (optional, for enhanced heatmaps)
 
 ### Install from Source
-git clone https://github.com/yourusername/gphion.git
-cd gphion
+cd /home/ram/Music/GPhIon
 pip install -e .
 
 text
@@ -62,8 +61,7 @@ CoordinateProcessor,
 AmorphousSiteFinder,
 SiteAnalyzerMDA,
 JumpDiffusivityAnalyzer,
-VanHovePlotter,
-ConnectivityPlotter
+VanHovePlotter
 )
 
 1. Load simulation data
@@ -94,12 +92,6 @@ sim_data, jump_analyzer.results, sites
 )
 jump_diffusivity = diffusivity_analyzer.calculate_jump_properties()
 
-6. Visualize connectivity
-conn_plotter = ConnectivityPlotter()
-conn_plotter.plot_3d_site_connectivity(
-sites, jump_analyzer.results.all_trans
-)
-
 text
 
 ### Van Hove Analysis
@@ -128,32 +120,28 @@ text
 ## Package Structure
 
 gphion/
-├── init.py
-├── core/
-│ ├── init.py
-│ ├── sim_data.py # Main data structure
-│ ├── coordinate_processor.py # Coordinate processing
-│ └── utils.py # Utility functions
-├── analyzers/
-│ ├── init.py
-│ ├── site_finder.py # TAOG site discovery
-│ ├── jump_analyzer.py # Jump detection
-│ ├── diffusivity_analyzer.py # Diffusivity calculations
-│ ├── collective_jump_analyzer.py # Collective behavior
-│ ├── vibration_analyzer.py # Vibrational analysis
-│ ├── rdf_analyzer.py # Radial distribution functions
-│ ├── tracer_analyzer.py # Tracer properties
-│ └── vanhove_analyzer.py # Van Hove functions
-├── visualization/
-│ ├── init.py
-│ ├── plotting.py # 3D density plots
-│ ├── vanhove_plotter.py # Van Hove visualization
-│ ├── displacement_plotter.py # Displacement analysis
-│ ├── collective_plotter.py # Collective jump plots
-│ └── connectivity_plotter.py # Site connectivity
-└── workflow/
-├── init.py
-└── main.py # Main workflow functions
+├── gphion/
+│   ├── __init__.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── sim_data.py           # Main data structure
+│   │   ├── coordinate_processor.py # Coordinate processing
+│   │   └── utils.py              # Utility functions
+│   ├── analyzers/
+│   │   ├── __init__.py
+│   │   ├── site_finder.py        # TAOG site discovery
+│   │   ├── jump_analyzer.py      # Jump detection
+│   │   ├── diffusivity_analyzer.py # Diffusivity calculations
+│   │   └── ...
+│   ├── visualization/
+│   │   ├── __init__.py
+│   │   └── ...
+│   └── workflow/
+│       ├── __init__.py
+│       └── main.py               # Main workflow functions
+├── tests/                        # Test suite
+├── setup.py                      # Installation script
+└── README.md                     # Documentation
 
 text
 
@@ -165,7 +153,6 @@ text
 - **`AmorphousSiteFinder`**: TAOG-based site discovery
 - **`SiteAnalyzerMDA`**: Jump detection and analysis
 - **`VanHoveAnalyzer`**: Van Hove correlation function calculation
-- **`ConnectivityPlotter`**: Site connectivity visualization
 - **`CollectiveJumpAnalyzer`**: Cooperative behavior analysis
 
 ### Analysis Types
@@ -174,8 +161,7 @@ text
 2. **Jump Analysis**: Detects and categorizes hopping events between sites
 3. **Diffusivity**: Calculates both tracer (MSD-based) and jump diffusivity
 4. **Collective Behavior**: Identifies spatially and temporally correlated jumps
-5. **Connectivity**: Maps diffusion pathways as network graphs
-6. **Van Hove Functions**: Analyzes particle displacement correlation functions
+5. **Van Hove Functions**: Analyzes particle displacement correlation functions
 
 ## Examples
 
@@ -183,7 +169,6 @@ See the `examples/` directory for complete analysis workflows:
 
 - `basic_analysis.py`: Standard TAOG analysis workflow
 - `van_hove_analysis.py`: Van Hove correlation function analysis
-- `connectivity_analysis.py`: Site connectivity and pathway analysis
 - `collective_jumps.py`: Collective jump behavior analysis
 
 ## Input File Formats
@@ -220,12 +205,16 @@ Memory usage scales with:
 
 If you use GPHIon in your research, please cite:
 
+```bibtex
 @software{gphion2025,
-title={GPHIon: Glassy Phase Ionic Conductor Analysis Package},
-author={Your Name},
-year={2025},
-url={https://github.com/yourusername/gphion}
+  title={GPHIon: Glassy Phase Ionic Conductor Analysis Package},
+  author={Ram Sewak},
+  institution={Indian Institute of Technology Gandhinagar},
+  year={2025},
+  email={ram.sewak@iitgn.ac.in},
+  url={/home/ram/Music/GPhIon}
 }
+```
 
 text
 
@@ -234,8 +223,8 @@ text
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### Development Setup
-git clone https://github.com/yourusername/gphion.git
-cd gphion
+git clone /home/ram/Music/GPhIon
+cd GPhIon
 pip install -e ".[dev]"
 
 text
@@ -259,9 +248,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 - **Documentation**: [https://gphion.readthedocs.io](https://gphion.readthedocs.io)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/gphion/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/gphion/discussions)
-- **Email**: your.email@institution.edu
+- **Issues**: Please contact ram.sewak@iitgn.ac.in
+- **Discussions**: Please contact ram.sewak@iitgn.ac.in
+- **Email**: ram.sewak@iitgn.ac.in
+- **Institution**: Indian Institute of Technology Gandhinagar
 
 ## Changelog
 
@@ -269,7 +259,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Initial release
 - Complete TAOG analysis implementation
 - Van Hove correlation function analysis
-- Site connectivity visualization
 - Collective jump analysis
 - Comprehensive visualization suite
 

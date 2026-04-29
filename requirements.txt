@@ -10,6 +10,7 @@ networkx>=2.5
 seaborn>=0.11.0
 scikit-image>=0.17.0
 pandas>=1.2.0
+plotly>=5.0.0
 
 # Development dependencies (install with: pip install -e ".[dev]")
 # pytest>=6.0.0
